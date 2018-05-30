@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>CRUD</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.30/angular.min.js"></script>
+	</head>
+	<body ng-controller= " baseDatos ">
+		<table >
+			<thead>
+				<tr>
+				<th>Id </th>
+				<th> Nombre </th>
+				<th> Apellidos </th>
+				<th> Correo </th>
+				<th> Puesto </th>
+				<th> </th>
+				<th> </th>
+				</tr>
+			</thead >
+			<tbody >
+				<tr ng-repeat= "x in data ">
+				<td>{{x.id}} </td>
+				<td>{{x.nombre}} </td>
+				<td>{{x.apellidos}} </td>
+				<td>{{x.correo}} </td>
+				<td>{{x.puesto}} </td>
+				<td><a><i> mode edit </i></a> </td>
+				<td><i> clear </i> </td>
+				</tr>
+			</tbody >
+		</table >
+
+		<div>
+			<div>
+				<h4> Agregar Personal </h4>
+				<div>
+					<form>
+						<div>
+							<div>
+								<input type= "number" class= "validate" ng-model= "id">
+								<label>Id </label>
+							</div>
+							<div>
+								<input type= "text" class= "validate" ng-model="nombre">
+								<label> Nombre </label>
+							</div>
+							<div>
+								<input type= "text" class= "validate" ng-model="apellido">
+								<label > Apellidos </label>
+							</div>
+							<div>
+								<input type= "text" class= "validate" ng-model="correo">
+								<label> Correo </label>
+							</div>
+							<div>
+								<input type= "tel" class= "validate" ng-model= "puesto">
+								<label> Puesto </label>
+							</div>
+						</div>
+					</form >
+				</div>
+			</div>
+			<div >
+				<a ng-click= " insertData ()"> Aceptar </a >
+				<a> Cancelar </a >
+			</div >
+		</div >
+
+		<form>
+			<h3> Detalles de la actualizacion</h3>
+			<div>
+				<div>
+					<input type= " text " ng-model= "id">
+					<label for= " icon_prefix ">Id </label>
+				</div>
+				<div>
+					<input type= " text " ng-model= " nombre ">
+					<label for= " icon_prefix "> Nombre </label>
+				</div>
+				<div>
+					<input type= " text " ng-model= " apellidos ">
+					<label for= " icon_prefix "> Apellido </label>
+				</div>
+				<div>
+					<input type= " text " ng-model= " correo ">
+					<label for= " icon_prefix "> Correo </label>
+				</div>
+				<div>
+					<input ng-model= " puesto ">
+					<label for= " icon_telephone "> Puesto </label>
+				</div>
+			</div>
+		</form>
+
+	</body>
+
+</html>
