@@ -93,6 +93,31 @@
 			</div>
 		</form>
 
+		<table>
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Nombre</th>
+					<th>Apellidos</th>
+					<th>Correo</th>
+					<th>Puesto</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody >
+				<tr ng-repeat= "x in data ">
+					<td>{{x.id}} </td>
+					<td>{{x.nombre}} </td>
+					<td>{{x.apellidos}} </td>
+					<td>{{x.correo}} </td>
+					<td>{{x.puesto}} </td>
+					<td><a><i> mode edit </i></a> </td >
+					<td><i ng-click= " deleteData (x)"> clear </i> </td>
+				</tr>
+			</tbody>
+		</table>
+
 	</body>
 
 </html>

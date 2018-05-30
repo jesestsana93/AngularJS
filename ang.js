@@ -36,7 +36,17 @@ $scope.updateData=function (id ,nombre , apellidos ,correo , puesto ){
 		$scope.apellidos ,'correo ': $scope.correo ,'puesto ': $scope.puesto
 	})
 	.success (function (data ,status , headers , config){
-		console.log ("Se actualizo correctamente ");
-		setTimeout (location.reload.bind (location), 300) ;
+		console.log("Se actualizo correctamente ");
+		setTimeout(location.reload.bind (location), 300) ;
+	});
+}
+/*
+ * Funcion para eliminar un elemento de la base de datos
+ */
+$scope.deleteData=function(info){
+	$http.post ("delete.php" ,{'correo ': info.correo }).success(
+	function(data ,status , headers , config ){
+		console.log ("Se elimino correctamente ");
+		setTimeout(location.reload.bind ( location ), 300);
 	});
 }
