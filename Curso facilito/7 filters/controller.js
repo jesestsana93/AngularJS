@@ -5,11 +5,11 @@ angular.module("mainModule",[])
 			return String(texto).replace(/<[^>]+>/gm,'');
 		}
 	})
-	.controller("FiltersController",function($scope){
-		$scope.mi_html="<p>Hola mundo</p>";
+	.controller("FiltersController",function($scope){		
 		$scope.mi_html={};
 		$scope.mi_html.title="Hola";
 		$scope.mi_html.body="Hola mundo";
+		$scope.mi_html2="<p>Hello world sin etiquetas de HTML</p>";
 		$scope.costo=2;
 	});
 
