@@ -1,4 +1,4 @@
-angular.module("CustomDirective",[])
+angular.module("CustomDirective")
 	.directive("myAutocomplete",function(){
 		function link(scope, element, attrs){
 			$(element).autocomplete({
@@ -30,22 +30,4 @@ angular.module("CustomDirective",[])
 			});
 		}; 
 	})
-	.controller("AppCtrl",function($scope,$http){
-		$scope.repos = [];
-		$http.get("https://api.github.com/users/jesestsana93/repos")
-		.then(function(response.data){
-			$scope.posts = response.data;
-			for(var i = response.data.length - 1; i>=0; i--){
-				var repo = response.data[i];
-				$scope.repos.push(repo.name);
-			};
-		},function(err){
-	    	console.log(err);
-		});
-
-		$scope.optionSelected = function(response.data){
-			$scope.$apply(function(){
-				$scope.main_repo = response.data;
-			})
-		}
-	});
+	
